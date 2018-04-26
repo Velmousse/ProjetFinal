@@ -1,7 +1,8 @@
 package Vaisseaux;
 
-/**
- * Created by dufvi1731300 on 2018-04-26.
- */
+import Déchets.Dechets;
+
 public abstract class Vaisseaux {
+    protected Dechets[] cargaison;
+    protected int tailleCargaison;
 }
