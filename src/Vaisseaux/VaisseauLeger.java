@@ -1,5 +1,4 @@
 package Vaisseaux;
-
 import Déchets.Dechets;
 
 public class VaisseauLeger extends Vaisseaux {

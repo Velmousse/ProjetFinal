@@ -1,7 +1,10 @@
 package Vaisseaux;
+import Déchets.Dechets;
 
-/**
- * Created by dufvi1731300 on 2018-04-26.
- */
-public class VaisseauLourd {
+public class VaisseauLourd extends Vaisseaux {
+
+    public VaisseauLourd() {
+        tailleCargaison = 30;
+        cargaison = new Dechets[tailleCargaison];
+    }
 }
