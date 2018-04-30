@@ -2,10 +2,10 @@ package Planètes;
 
 public class PlaneteRouge extends Planetes{
     public PlaneteRouge() {
-        qteGadolinium=0.1;
-        qteNeptunium=0.5;
-        qtePlutonium=0.2;
-        qteThulium=0.1;
-        qteTerbium=0.1;
+        qteGadolinium = 10;
+        qteNeptunium = 15;
+        qtePlutonium = 20;
+        qteThulium = 75;
+        qteTerbium = 100;
     }
 }

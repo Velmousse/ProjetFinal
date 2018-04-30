@@ -2,7 +2,7 @@ package Déchets;
 
 public class Terbium extends Dechets{
     public Terbium() {
-        masseVolumique = 8;
+        masseVolumique = 10;
         pourcentageRecyclable = 0.75;
     }
 }

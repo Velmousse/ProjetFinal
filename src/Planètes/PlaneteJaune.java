@@ -2,11 +2,11 @@ package Planètes;
 
 public class PlaneteJaune extends Planetes{
     public PlaneteJaune() {
-        qteGadolinium=0.1;
-        qteNeptunium=0.6;
-        qtePlutonium=0.1;
-        qteThulium=0.1;
-        qteTerbium=0.1;
+        qteGadolinium = 10;
+        qteNeptunium = 70;
+        qtePlutonium = 80;
+        qteThulium = 90;
+        qteTerbium = 100;
 
     }
 }
