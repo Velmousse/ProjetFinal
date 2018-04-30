@@ -1,5 +1,6 @@
 import CentreDeTri.*;
 import Planètes.*;
+import Vaisseaux.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +8,13 @@ public class Main {
                 new PlaneteNoire(), new PlaneteRouge(), new PlaneteVerte()};
 
         CentreDeTri[] listeTris = new CentreDeTri[100];
-        for (CentreDeTri emplacement: listeTris)
-            emplacement = new CentreDeTri();
+        for (int i = 0; i < listeTris.length; i++)
+            listeTris[i] = new CentreDeTri();
+
+        Vaisseaux test = new VaisseauLourd();
+        while (true) {
+            test.chargement(tableauPlanete[(int) (Math.random() * 6)]);
+            test.dechargement(listeTris);
+        }
     }
 }

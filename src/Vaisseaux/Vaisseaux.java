@@ -15,7 +15,7 @@ public abstract class Vaisseaux {
     public void chargement(Planetes planete) {
         int rndNumber;
 
-        for (int i = 0; i < cargaison.size(); i++) {
+        for (int i = 0; i < tailleCargaison; i++) {
             rndNumber = (int) (Math.random() * 101);
 
             if (rndNumber < planete.getQteGadolinium())
