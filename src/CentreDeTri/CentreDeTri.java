@@ -14,24 +14,29 @@ public class CentreDeTri {
     private Queue<Vaisseaux> fileAttente = new LinkedList<Vaisseaux>();
     private Planetes[] tableauPlanete = {new PlaneteBleue(), new PlaneteJaune(),
             new PlaneteNoire(), new PlaneteRouge(), new PlaneteVerte()};
+    CentreDeTri[] listeTris;
+
+
 
     public CentreDeTri() {
         contenu.add(new Stack<Gadolinium>());
-        contenu.get(0).setSize(10);
         contenu.add(new Stack<Neptunium>());
-        contenu.get(1).setSize(10);
         contenu.add(new Stack<Plutonium>());
-        contenu.get(2).setSize(10);
         contenu.add(new Stack<Thulium>());
-        contenu.get(3).setSize(10);
         contenu.add(new Stack<Terbium>());
-        contenu.get(4).setSize(10);
+    }
+
+    public void setListeTris(CentreDeTri[] listeTris) {
+        this.listeTris = listeTris;
     }
 
     public void chargerFileAttente(Vaisseaux vaisseau) {
-        if (fileAttente.size() < 10)
+        if (fileAttente.size() < 10) {
+            System.out.println("Ajout à la file d'attente");
             fileAttente.add(vaisseau);
+        }
         else {
+            System.out.println("Vaisseau quitte la file d'attente");
             fileAttente.peek().chargement(tableauPlanete[(int) (Math.random() * 5)]);
         }
     }
@@ -42,5 +47,17 @@ public class CentreDeTri {
 
     public Queue<Vaisseaux> getFileAttente() {
         return fileAttente;
+    }
+
+    public void recyclage(int stack) {
+        if (!fileAttente.isEmpty()) {
+            System.out.println("Recyclage");
+            Stack<Dechets> aVider = contenu.get(stack);
+            int ceQuOnVide = (int) aVider.peek().getPourcentageRecyclable() * 10;
+            Vaisseaux videur = fileAttente.poll();
+            for (int i = 0; i < ceQuOnVide; i++)
+                videur.recycler(aVider.pop());
+            videur.dechargement();
+        }
     }
 }
