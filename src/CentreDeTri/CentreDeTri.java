@@ -31,13 +31,13 @@ public class CentreDeTri {
     }
 
     public void chargerFileAttente(Vaisseaux vaisseau) {
-        if (fileAttente.size() < 10) {
+        if (fileAttente.size() < 1) {
             System.out.println("Ajout à la file d'attente");
             fileAttente.add(vaisseau);
         }
         else {
             System.out.println("Vaisseau quitte la file d'attente");
-            fileAttente.peek().chargement(tableauPlanete[(int) (Math.random() * 5)]);
+            fileAttente.peek().chargement(tableauPlanete[(int) (Math.random() * 1)]);
         }
     }
 
@@ -57,7 +57,11 @@ public class CentreDeTri {
             Vaisseaux videur = fileAttente.poll();
             for (int i = 0; i < ceQuOnVide; i++)
                 videur.recycler(aVider.pop());
+            System.out.println("Vaisseau plein (recyclage)");
             videur.dechargement();
+        }
+        else {
+            System.out.println("La file d'attente est vide");
         }
     }
 }
