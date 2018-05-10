@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<data>
+    <vaisseaux>
+        <vaisseauxLourd>
+            <nombreDeVaisseaux> 1 </nombreDeVaisseaux>
+        </vaisseauxLourd>
+
+        <vaisseauxNomaux>
+            <nombreDeVaisseaux> 1 </nombreDeVaisseaux>
+        </vaisseauxNomaux>
+
+        <vaisseauxLeger>
+            <nombreDeVaisseaux> 1 </nombreDeVaisseaux>
+        </vaisseauxLeger>
+    </vaisseaux>
+
+
+    <planetes>
+        <planeteBleue>
+            <nombreDePlanetes> 1 </nombreDePlanetes>
+            <prctGadolinium> 20 </prctGadolinium>
+            <prctNeptinium> 50 </prctNeptinium>
+            <prctPlutonium> 75 </prctPlutonium>
+            <prctThulium> 95 </prctThulium>
+            <prctTerbium> 100 </prctTerbium>
+        </planeteBleue>
+
+        <planeteJaune>
+            <nombreDePlanetes> 1 </nombreDePlanetes>
+            <prctGadolinium> 10 </prctGadolinium>
+            <prctNeptinium> 70 </prctNeptinium>
+            <prctPlutonium> 80 </prctPlutonium>
+            <prctThulium> 90 </prctThulium>
+            <prctTerbium> 100 </prctTerbium>
+        </planeteJaune>
+
+        <planeteVerte>
+            <nombreDePlanetes> 1 </nombreDePlanetes>
+            <prctGadolinium> 5 </prctGadolinium>
+            <prctNeptinium> 30 </prctNeptinium>
+            <prctPlutonium> 55 </prctPlutonium>
+            <prctThulium> 75 </prctThulium>
+            <prctTerbium> 100 </prctTerbium>
+        </planeteVerte>
+
+        <planeteRouge>
+            <nombreDePlanetes> 1 </nombreDePlanetes>
+            <prctGadolinium> 10 </prctGadolinium>
+            <prctNeptinium> 15 </prctNeptinium>
+            <prctPlutonium> 20 </prctPlutonium>
+            <prctThulium> 75 </prctThulium>
+            <prctTerbium> 100 </prctTerbium>
+        </planeteRouge>
+
+        <planeteNoire>
+            <nombreDePlanetes> 1 </nombreDePlanetes>
+            <prctGadolinium> 40 </prctGadolinium>
+            <prctNeptinium> 70 </prctNeptinium>
+            <prctPlutonium> 75 </prctPlutonium>
+            <prctThulium> 80 </prctThulium>
+            <prctTerbium> 100 </prctTerbium>
+        </planeteNoire>
+    </planetes>
+
+
+    <centresDeTri>
+        <nombreCentres> 2 </nombreCentres>
+    </centresDeTri>
+
+
+    <dechets>
+        <gadolinium>
+            <masseVolumique> 8 </masseVolumique>
+            <pourcentageRecyclable> 0.4 </pourcentageRecyclable>
+        </gadolinium>
+
+        <netpunium>
+            <masseVolumique> 20 </masseVolumique>
+            <pourcentageRecyclable> 0.1 </pourcentageRecyclable>
+        </netpunium>
+
+        <plutonium>
+            <masseVolumique> 21 </masseVolumique>
+            <pourcentageRecyclable> 0.5 </pourcentageRecyclable>
+        </plutonium>
+
+        <terbium>
+            <masseVolumique> 10 </masseVolumique>
+            <pourcentageRecyclable> 0.75 </pourcentageRecyclable>
+        </terbium>
+
+        <thulium>
+            <masseVolumique> 9 </masseVolumique>
+            <pourcentageRecyclable> 0.25 </pourcentageRecyclable>
+        </thulium>
+    </dechets>
+</data>

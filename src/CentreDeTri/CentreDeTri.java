@@ -1,8 +1,11 @@
 package CentreDeTri;
 
 import Déchets.*;
+import Exceptions.FilesAttentePleines;
+import Exceptions.TypesMatiereVides;
 import Planètes.*;
 import Vaisseaux.*;
+import Main.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -32,11 +35,11 @@ public class CentreDeTri {
 
     public void chargerFileAttente(Vaisseaux vaisseau) {
         if (fileAttente.size() < 1) {
-            System.out.println("Ajout à la file d'attente");
+            Main.log.writeLog("Ajout à la file d'attente\n");
             fileAttente.add(vaisseau);
         }
         else {
-            System.out.println("Vaisseau quitte la file d'attente");
+            Main.log.writeLog("Vaisseau quitte la file d'attente\n");
             fileAttente.peek().chargement(tableauPlanete[(int) (Math.random() * 1)]);
         }
     }
@@ -49,19 +52,28 @@ public class CentreDeTri {
         return fileAttente;
     }
 
-    public void recyclage(int stack) {
+    public void recyclage(int stack) throws FilesAttentePleines{
         if (!fileAttente.isEmpty()) {
-            System.out.println("Recyclage");
+            Main.log.writeLog("Recyclage\n");
             Stack<Dechets> aVider = contenu.get(stack);
             int ceQuOnVide = (int) aVider.peek().getPourcentageRecyclable() * 10;
             Vaisseaux videur = fileAttente.poll();
             for (int i = 0; i < ceQuOnVide; i++)
                 videur.recycler(aVider.pop());
-            System.out.println("Vaisseau plein (recyclage)");
-            videur.dechargement();
-        }
-        else {
-            System.out.println("La file d'attente est vide");
+            Main.log.writeLog("Vaisseau plein (recyclage)\n");
+            try {
+                videur.dechargement();
+            } catch (TypesMatiereVides e) {
+                Main.log.writeLog("Les piles d'une matière sont pleines\n");
+                Main.log.writeLog("Fin du programme\n");
+                Main.log.saveLog();
+                System.exit(0);
+            }
+
+        } else if (fileAttente.size() == 10) {
+            throw new FilesAttentePleines();
+        } else {
+            Main.log.writeLog("La file d'attente est vide\n");
         }
     }
 }
