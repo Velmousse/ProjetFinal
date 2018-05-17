@@ -1,5 +1,7 @@
 package Log;
 
+import Main.*;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.util.*;
@@ -23,6 +25,10 @@ public class Log {
     }
 
     public void saveLog() {
-        sortie.flush();
+        try {
+            Main.out.writeObject(sortie);
+            Main.out.flush();
+        }
+        catch (IOException e) {}
     }
 }

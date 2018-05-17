@@ -7,26 +7,43 @@ import Log.*;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
+import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 
 public class Main {
     public static Log log = new Log();
     public static NodeList nodeListe;
+    public static ObjectOutputStream out;
 
     public static void main(String[] args) throws Exception{
 
-        Socket socket = new Socket("127.0.0.1", 8080);
-        OutputStream fluxSortant = socket.getOutputStream();
-        OutputStreamWriter sortie = new OutputStreamWriter(fluxSortant);
-        sortie.write("Connection\n");
-        sortie.flush();
+        Socket client;
+        ObjectInputStream in;
+        //ObjectOutputStream out;
+        File f = null;
+        try {
+            client = new Socket("127.0.0.1",8080);
+            out = new ObjectOutputStream(client.getOutputStream());
+            in = new ObjectInputStream(client.getInputStream());
+            out.flush();
+            try {
+                f = (File)in.readObject();
+            }
+            catch(ClassNotFoundException cnfex) {}
 
-        InputStream fluxEntrant = socket.getInputStream();
-        BufferedReader entree = new BufferedReader(new InputStreamReader(fluxEntrant));
-        String message = entree.readLine();
+            out.writeObject("FIN");
+            out.flush();
+            in.close();
+            out.close();
+            client.close();
+        }
+        catch(EOFException e) {}
 
-        File file = new File("src/Configuration.xml");
+
+
+        File file = f;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbf.newDocumentBuilder();
