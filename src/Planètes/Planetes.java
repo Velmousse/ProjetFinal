@@ -2,7 +2,7 @@ package Planètes;
 
 public abstract class Planetes {
 
-    protected int qtePlutonium, qteGadolinium, qteTerbium, qteThulium, qteNeptunium;
+    protected int qteGadolinium, qteNeptunium, qtePlutonium, qteThulium, qteTerbium;
 
     public int getQtePlutonium() {
         return qtePlutonium;
